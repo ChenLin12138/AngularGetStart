@@ -8,3 +8,26 @@
     <span>{{item.name}}</span>
     <span>{{item.price | currency}}</span>
 </div>
+
+<!--以下是结账账单-->
+<!--checkoutForm被绑定在模板的form上，并且提供一个Purchase按钮来完成提交-->
+<!--使用ngSubmit事件绑定来监听的表单提交-->
+<form [formGroup] = "checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<!--为name和address添加输入字段，是使用formControlName绑定他们的输入字段-->    
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+        <label for="address">
+            Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+    </div>
+    
+    <button class="button" type="submit">Purchase</button>
+</form>
+
