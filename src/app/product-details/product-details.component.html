@@ -1,0 +1,8 @@
+<p>Product Details</p>
+<div *ngIf="product">
+    <h3>{{ product.name }}</h3>
+    <!--根据本地格式，将数字转换成货币符号-->
+    <!--{{ value_expression | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }}-->
+    <h4>{{ product.price | currency }}</h4>
+    <p>{{ product.description }}</p>
+</div>
